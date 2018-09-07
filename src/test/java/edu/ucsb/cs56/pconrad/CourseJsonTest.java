@@ -86,7 +86,7 @@ public class CourseJsonTest {
 	assertEquals("PROBLEM SOLVING II", c.getCourse_title());
 	
     }
-
+    /*
     @Test
     public void test_jackson_nested() throws IOException {
 	Section s = new ObjectMapper()
@@ -96,5 +96,5 @@ public class CourseJsonTest {
 	assertEquals(s.getCapacity(), 26);
 
     }
-	
+    */	
 }

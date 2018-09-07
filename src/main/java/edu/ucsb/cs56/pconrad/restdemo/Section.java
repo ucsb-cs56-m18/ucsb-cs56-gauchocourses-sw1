@@ -26,6 +26,9 @@ class Section {
     private String status;
     private String times;
 
+    public int getCapacity(){
+	return this.capacity;
+    }
     
     @SuppressWarnings("unchecked")
     @JsonProperty("sections")

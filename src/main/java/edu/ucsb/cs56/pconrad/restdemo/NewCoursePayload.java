@@ -24,7 +24,7 @@ class NewCoursePayload {
     private String status;
     private String times;
 
-    private List sections = new LinkedList<>();
+    private List<Section> sections = new LinkedList<>();
 
     public boolean isValid() {
 	return course_id != null && !course_id.isEmpty();
