@@ -26,6 +26,13 @@ class Course {
 
     private List<Section> sections;
 
+    /*
+    @SupressWarnings("unchecked")
+    @JsonProperty("sections")
+    private void unpackNested(Map<String,Object> sections){
+	this.course_title
 
+    }
+    */
     
 }

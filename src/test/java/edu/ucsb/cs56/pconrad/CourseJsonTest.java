@@ -1,5 +1,7 @@
 package edu.ucsb.cs56.pconrad.restdemo;
 
+import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -83,6 +85,16 @@ public class CourseJsonTest {
 	assertEquals("T R", c.getDays());
 	assertEquals("PROBLEM SOLVING II", c.getCourse_title());
 	
+    }
+
+    @Test
+    public void test_jackson_nested() throws IOException {
+	Section s = new ObjectMapper()
+	    .readerFor(Section.class)
+	    .readValue(courseJson1);
+
+	assertEquals(s.getCapacity(), 26);
+
     }
 	
 }
