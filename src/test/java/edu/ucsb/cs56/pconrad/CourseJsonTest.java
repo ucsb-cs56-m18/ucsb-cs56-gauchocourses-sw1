@@ -80,7 +80,7 @@ public class CourseJsonTest {
 
     @Test
     public void test_decode1() throws Exception {
-	Course c = Main.json2Course(courseJson1);
+	Course c = TryOneCourse.jsonToCourse(courseJson1);
 	assertEquals(105, c.getCapacity());
 	assertEquals("T R", c.getDays());
 	assertEquals("PROBLEM SOLVING II", c.getCourse_title());

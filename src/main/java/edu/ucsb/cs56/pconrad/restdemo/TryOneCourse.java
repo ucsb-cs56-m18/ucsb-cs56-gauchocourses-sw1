@@ -16,31 +16,16 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.stream.Collector;
 
-public class Main {
+public class TryOneCourse {
 		
-	public static Course json2Course(String json) throws JsonParseException, IOException {
+	public static Course jsonToCourse(String json) throws JsonParseException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		NewCoursePayload creation = mapper.readValue(json, NewCoursePayload.class);
-		if (!creation.isValid()) {
-			return null;
-		} else {
-		    Course c = new Course();
-		    c.setCapacity(creation.getCapacity());
-		    c.setCourse_id(creation.getCourse_id());
-		    c.setCourse_title(creation.getCourse_title());
-		    c.setDays(creation.getDays());
-		    c.setEnrollment(creation.getEnrollment());
-		    c.setInstructor(creation.getInstructor());
-		    c.setLocation(creation.getLocation());
-		    c.setStatus(creation.getStatus());
-		    c.setTimes(creation.getTimes());
-		    c.setSections(creation.getSections());
-		    
-		
-		    return c;
-		}
+	    Course c = mapper.readValue(json, Course.class);
+		System.out.println("Course = " + c.toString());
+		return c;
 	}
+	
 	
 	public static void main(String[] args) {
 	    String json2 =         "       {" +
@@ -104,14 +89,14 @@ public class Main {
         "          \"status\": \"\"," +
         "          \"times\": \"9:30 am - 10:45am\"" +
 		"}";
+
 	    try {
-	    Course x = json2Course(json2);
-	    System.out.println(x.getSections().get(1).getCapacity());
+			Course x = jsonToCourse(json2);
+			System.out.println(x.getSections().get(1).getCapacity());
 	    }
 	    catch (Exception e){
-		System.out.println("An exception occurred");
+			System.out.println("An exception occurred");
 	    }
-
 	    
 	}
 	
