@@ -1,6 +1,15 @@
 # ucsb-cs56-gauchocourses-sw1
 This is the JSON reader for course files.
 
+# To Run 
+```
+mvn compile
+mvn exec:java
+```
+Result:
+* All courses data
+* Press Enter, you can get the data back to json
+
 # To Run the older Main
 
 ```
