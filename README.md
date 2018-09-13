@@ -4,6 +4,7 @@ This is the JSON reader for course files.
 # To Run 
 ```
 mvn compile
+mvn package
 mvn exec:java
 ```
 Result:
